@@ -40,3 +40,5 @@ class Solution {
     return idx;
     }
 }
+
+//Time Complexity - O(N^2)
