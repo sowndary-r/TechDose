@@ -15,6 +15,7 @@ public class Main
 		    System.out.print(a[i]+" ");
 		}
 	}
+	//BinarySearch
 	public static void MergeSort(int[] a,int low ,int high)
 	{
 	    if(high == low)
@@ -26,6 +27,7 @@ public class Main
 	    MergeSort(a,mid+1,high);
 	    Merge(a,high,mid,low);
 	}
+	//merge2sortedArrays
 	public static void Merge(int[] a,int high,int mid,int low)
 	{
 	    int i = low,j=mid+1;
