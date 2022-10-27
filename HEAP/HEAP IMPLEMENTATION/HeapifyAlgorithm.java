@@ -19,7 +19,7 @@ public class Main
 	    return;
 	    if(arr[l]>arr[i]&&l<arr.length)
 	    lar=l;
-	    if(arr[r]>arr[l]&&r<arr.length)
+	    if(arr[r]>arr[lar]&&r<arr.length)
 	    lar=r;
 	    if(lar!=i)
 	    {
