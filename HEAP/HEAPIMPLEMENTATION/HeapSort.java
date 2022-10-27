@@ -66,3 +66,42 @@ public class Main
 	}
 }
 
+/another method
+import java.util.*;
+class HelloWorld {
+    static void heapify(int[] arr,int i,int size)
+	{
+	    int lar=i;
+	    int l=2*i;
+	    int r=2*i+1;
+	    if(l<size&&arr[l]>arr[lar])
+	    lar=l;
+	    if(r<size&&arr[r]>arr[lar])
+	    lar=r;
+	    if(lar!=i)
+	    {
+	       int t=arr[i];
+	       arr[i]=arr[lar];
+	       arr[lar]=t;
+	        heapify(arr,lar);
+	    }
+	}
+    static void buildheap(int[] arr,int n)
+	{
+	    for(int i=(n/2)+1;i>0;i--)
+	    heapify(arr,i,arr.length);
+	    for(int i=arr.length-1;i>1;i--)
+	    {
+	       int t=arr[1];
+	       arr[1]=arr[i];
+	       arr[i]=t;
+	       heapify(arr,1,i);
+	    }
+	}
+    public static void main(String[] args) {
+        int arr[]={0,9,6,-1,3,4,2,1}; //given Array
+	  buildheap(arr,8);  //apply buildheap to build maxheap
+	  for(int i:arr)
+		System.out.println(i+" ");
+    }
+}
