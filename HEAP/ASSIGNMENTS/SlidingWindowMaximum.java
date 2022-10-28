@@ -11,7 +11,7 @@ class Solution{
       public int[] maxSlidingWindow(int[] nums, int k)
       {
          int l=0,r=0;
-         PriorityQueue<Num> q=new PriorityQueue<>((a,b)->Integer.compare(b.data,a.data)); //ordering priority queue with greatest element at top
+         PriorityQueue<Num> q=new PriorityQueue<>((a,b)->b.data-a.data); //ordering priority queue with greatest element at top
           int arr[]=new int[nums.length-k+1];
          while(r<nums.length)
          {
