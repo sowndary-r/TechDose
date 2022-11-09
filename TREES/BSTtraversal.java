@@ -1,5 +1,5 @@
 //TC:
-   //Binary tree:
+   //Binary Search tree:
     //Insertion - O(N)
    //Traversal - O(N)
 
