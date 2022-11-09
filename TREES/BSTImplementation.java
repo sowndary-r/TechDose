@@ -3,6 +3,7 @@
     //Insertion - O(N)
    //Traversal - O(N)
 
+import java.util.*;
 public class Main
 {
     static class Node{  //creating node of the tree
@@ -65,6 +66,23 @@ public class Main
         }
         
     }
+    static void levelorderTraverse(Node node)
+    {
+        Queue<Node> q = new LinkedList<>();
+        if(node==null)
+        return;
+        Node curr=node;
+        q.add(curr);
+        while(!q.isEmpty())
+        { 
+          curr=q.poll();
+          System.out.print(curr.val+" ");
+          if(curr.left!=null)
+          q.add(curr.left);
+          if(curr.right!=null)
+          q.add(curr.right);
+        }
+    }
 	public static void main(String[] args) {
 	    Node root=new Node(5);
 	    Main tree=new Main();
@@ -84,5 +102,8 @@ public class Main
 		System.out.println();
 		System.out.println("POSTORDER TRAVERSAL");
 		postorderTraverse(root);
+		System.out.println();
+		System.out.println("LEVELORDER TRAVERSAL");
+	    levelorderTraverse(root);
 	}
 }
