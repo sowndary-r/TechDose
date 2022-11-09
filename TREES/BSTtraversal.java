@@ -66,21 +66,21 @@ public class Main
         }
         
     }
-    static void levelorderTraverse(Node node)
+    static void levelorderTraverse(Node node) //prints all the nodes at particular level
     {
         Queue<Node> q = new LinkedList<>();
         if(node==null)
         return;
         Node curr=node;
-        q.add(curr);
-        while(!q.isEmpty())
+        q.add(curr); //add root node inside the queue
+        while(!q.isEmpty()) //iterate until queue becomes empty
         { 
-          curr=q.poll();
-          System.out.print(curr.val+" ");
-          if(curr.left!=null)
-          q.add(curr.left);
+          curr=q.poll(); //remove and store the front node
+          System.out.print(curr.val+" "); //print the visited node
+          if(curr.left!=null) 
+          q.add(curr.left); //enqueue the leftchild of the node if exists
           if(curr.right!=null)
-          q.add(curr.right);
+          q.add(curr.right); //enqueue the rightchild of the node is exists
         }
     }
 	public static void main(String[] args) {
@@ -104,6 +104,6 @@ public class Main
 		postorderTraverse(root);
 		System.out.println();
 		System.out.println("LEVELORDER TRAVERSAL");
-	    levelorderTraverse(root);
+	        levelorderTraverse(root);
 	}
 }
