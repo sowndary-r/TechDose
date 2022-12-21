@@ -16,15 +16,15 @@ public class Main
         buildSegmentTree(a,2*st+1,mid+1,end);
         seg[st]=Math.max(seg[2*st],seg[2*st+1]);
     }
-    static int rangemin(int qs,int qe,int st,int s,int e)
+    static int rangemax(int qs,int qe,int st,int s,int e)
     {
        if(s>qe||e<qs)
        return 0;
        if(s>=qs&&e<=qe)
        return Math.max(max,seg[st]);
        int mid=s+(e-s)/2;
-       int max1=rangemin(qs,qe,2*st,s,mid);
-       int max2=rangemin(qs,qe,2*st+1,mid+1,e);
+       int max1=rangemax(qs,qe,2*st,s,mid);
+       int max2=rangemax(qs,qe,2*st+1,mid+1,e);
        return Math.max(max1,max2);
     }
 	public static void main(String[] args) {
@@ -32,6 +32,6 @@ public class Main
 		n=a.length;
 		seg=new int[4*n+1];
 		buildSegmentTree(a,1,0,n-1);
-		System.out.println("RANGE MAXIMUM FOR RANGE (0,5)-->"+rangemin(0,0,1,0,n-1));
+		System.out.println("RANGE MAXIMUM FOR RANGE (0,5)-->"+rangemax(0,0,1,0,n-1));
 	}
 }
