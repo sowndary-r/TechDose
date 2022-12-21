@@ -32,6 +32,6 @@ public class Main
 		n=a.length;
 		seg=new int[4*n+1];
 		buildSegmentTree(a,1,0,n-1);
-		System.out.println("RANGE MIMINUM FOR RANGE (0,5)-->"+rangemin(0,0,1,0,n-1));
+		System.out.println("RANGE MAXIMUM FOR RANGE (0,5)-->"+rangemin(0,0,1,0,n-1));
 	}
 }
