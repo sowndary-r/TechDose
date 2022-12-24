@@ -1,3 +1,4 @@
+//Approach: Disjoint set union find(DSUF)
 //TC : 0(E*V);
 
 import java.util.*;
