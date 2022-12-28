@@ -11,7 +11,6 @@ public class Main
           {
               if(vis[adj.get(node).get(i)]==false)
               {
-                  vis[adj.get(node).get(i)]=true;
                  if(iscycle(adj,vis,adj.get(node).get(i),node))
                  return true;
               }
