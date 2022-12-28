@@ -44,7 +44,7 @@ public class Main
 	    l.get(6).add(5);
 	    
 	    boolean []vis=new boolean[v];
-		//cycle Detection 
+		//cycle Detection for only one component
 		if(iscycle(l,vis,0,-1))
 		System.out.println("Cycle detected");
 		else
