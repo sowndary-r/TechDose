@@ -1,0 +1,44 @@
+//Approach - cycle detection in undirected graph using disjoint set union find
+class Solution {
+    static int par[];
+    public int[] findRedundantConnection(int[][] edges) {
+        par=new int[edges.length+1];
+        Arrays.fill(par,-1);
+        return dsuf(edges);
+    }
+    int[] dsuf(int[][]edges)
+    {
+        int res[]=new int[2];
+        Arrays.fill(res,-1);
+      for(int i=0;i<edges.length;i++)
+      {
+          
+          int from=edges[i][0];
+          int to=edges[i][1];
+          int fp=find(from);
+          int tp=find(to);
+          if(fp==tp)
+          {
+              res[0]=from;
+              res[1]=to;
+              return res;
+          }
+          else
+          union(from,to);
+      }
+        return res;
+    }
+    int find(int n)
+    {
+      if(par[n]==-1)
+          return n;
+       else
+        return find(par[n]);
+    }
+    void union(int a,int b)
+    {
+        int pa=find(a);
+        int pb=find(b);
+        par[pa]=pb;
+    }
+}
