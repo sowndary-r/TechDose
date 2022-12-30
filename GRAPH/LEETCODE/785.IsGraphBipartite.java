@@ -1,3 +1,4 @@
+//Approach - graph colouring(2 color)
 class Solution {
     public boolean isBipartite(int[][] graph) {
         int v=graph.length;
