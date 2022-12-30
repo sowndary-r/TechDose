@@ -1,6 +1,6 @@
 //Approach - DFS
 class Solution {
-     boolean vis[];
+
      List<List<Integer>> path;
     public List<List<Integer>> allPathsSourceTarget(int[][] graph) {
         path=new ArrayList<>();
@@ -22,7 +22,6 @@ class Solution {
     }
     void dfs(int source,List<List<Integer>> adj,List<Integer> temp)
     {
-        vis[source]=true;
         if(source==adj.size()-1)
         {
             path.add(new ArrayList<>(temp));
