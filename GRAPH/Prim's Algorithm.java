@@ -22,7 +22,7 @@ public class Main
           {
             int ver=a[0];
             int cost=a[1];
-            if(cost<dis[ver])
+            if(!vis[ver] && cost<dis[ver])
             {
                 dis[ver]=cost;
                 parent[ver]=vertex;
