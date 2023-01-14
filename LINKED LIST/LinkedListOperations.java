@@ -12,12 +12,12 @@ public class Main
        }
     }
     static Node head=null;
-     void insertAtBeginning(Main list,int data)
+    static void insertAtBeginning(int data)
     {
         Node node=new Node(data);
         node.next=null;
-        if(list.head==null)
-        list.head=node;
+        if(head==null)
+        head=node;
         else
         {
             Node first=head;
@@ -26,30 +26,30 @@ public class Main
         }
         
     }
-    void insertAtEnd(Main list,int data)
+    static void insertAtEnd(int data)
     {
         Node node=new Node(data);
         node.next=null;
-        if(list.head==null)
-        list.head=node;
+        if(head==null)
+        head=node;
         else{
-            Node curr=list.head;
+            Node curr=head;
             while(curr.next!=null)
             curr=curr.next;
             curr.next=node;
         }
     }
-    void insertAtPosition(Main list,int data,int pos)
+    static void insertAtPosition(int data,int pos)
     {
         Node node=new Node(data);
         node.next=null;
-        if(list.head==null && pos!=1)
+        if(head==null && pos!=1)
         System.out.println("List is empty");
-        if(list.head==null && pos==1)
-        list.head=node;
+        if(head==null && pos==1)
+        head=node;
         else
         {
-           Node curr=list.head;
+           Node curr=head;
            for(int i=1;i<pos-1;i++)
            {
                curr=curr.next;
@@ -76,16 +76,16 @@ public class Main
 	public static void main(String[] args) {
 	    Main list=new Main();
 	    //insertAtBeginning
-	   list.insertAtBeginning(list,40);
-	   list.insertAtBeginning(list,30);
-	   list.insertAtBeginning(list,20);
-	   list.insertAtBeginning(list,10);
+	   insertAtBeginning(40);
+	   insertAtBeginning(30);
+	   insertAtBeginning(20);
+	   insertAtBeginning(10);
 	   //insertAtEnd
-	   list.insertAtEnd(list,50);
-	   list.insertAtEnd(list,60);
-	   list.insertAtEnd(list,70);
+	   insertAtEnd(50);
+	   insertAtEnd(60);
+	   insertAtEnd(70);
 	   //insertAtPosition
-	   list.insertAtPosition(list,80,5);
+	   insertAtPosition(80,5);
 	   display();
 	   
 	}
