@@ -26,7 +26,7 @@ class Solution {
             {
              low=mid+1;
             }
-            else //if no fo elements greater than kth value than increment high to mid;
+            else 
             {
                 high=mid;
             }
